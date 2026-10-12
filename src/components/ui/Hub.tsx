@@ -1,3 +1,3 @@
-export function Hub() {
-  return <h1>Hub</h1>;
+export default function Hub() {
+  return <h1>Hub</h1>
 }

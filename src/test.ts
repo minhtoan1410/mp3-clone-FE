@@ -1,10 +1,16 @@
-import { zing } from "zingmp3-api-next";
-// zing.get_song("nQdHjFu7OBG").then((data) => console.log(data));
-zing.get_home().then((data) => console.log(data.data.items[0]));
-// https://zingmp3.vn/bai-hat/Nang-Am-Trong-Tim-Duongg-Dadeon/.html
-
-// {
-//     song_name
-//     song_name
-//     cater
-// }
+import { zing } from 'zingmp3-api-next'
+import data from './data.json'
+const props = {
+  encodeId: '',
+  title: '',
+  artistsNames: '',
+  album: {
+    thumbnail: ''
+  }
+}
+data.songs.map((e) =>
+  zing.get_song_info(e).then((data) => {
+    const { encodeId, title, artistsNames, album: { thumbnail } = {} } = data.data
+    console.log({ encodeId, title, artistsNames, thumbnail }, ',')
+  })
+)
