@@ -1,0 +1,59 @@
+@font-face {
+  font-family: "mp3-zing";
+  src: url("./assets/mp3-zing.2a3edced.woff") format("woff");
+}
+
+.icon {
+  font-family: "mp3-zing";
+  font-style: normal !important;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.custom-range {
+  --scale-ratio: 1.2;
+  --track-height: 6px;
+  --thumb-radius: calc(var(--track-height) + 7px);
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 12px;
+  height: var(--track-height);
+  cursor: pointer;
+  outline: none;
+  background: linear-gradient(
+    to right,
+    #ffffff var(--progress, 0%),
+    #5a5560 var(--progress, 0%)
+  );
+}
+
+.custom-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: calc(var(--thumb-radius) / var(--scale-ratio));
+  width: var(--thumb-radius);
+  opacity: 0;
+  border-radius: 12px;
+  background: #ffffff;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+.custom-range:hover::-webkit-slider-thumb {
+  opacity: 100;
+}
+.custom-range:hover {
+  transform: scaleY(var(--scale-ratio)); /* Phóng to khi rê chuột */
+}
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  display: inline-block;
+  animation: marquee 6s linear infinite;
+}

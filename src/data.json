@@ -1,0 +1,39 @@
+{
+  "sectionId": "hQuickPlay2",
+  "sectionType": "quickPlay",
+  "items": [
+    {
+      "id": "OPxgCOK8wYNc",
+      "thumbnail": "https://photo-resize-zmp3.zmdcdn.me/w600_r1x1_jpeg/cover/6/2/4/8/624840751380888c12552b14913b89f7.jpg",
+      "tag": "CÓ THỂ BẠN THÍCH",
+      "layoutType": 1,
+      "isQuickPlay": true,
+      "title": "Top 100 Nhạc Dance Việt Nam Hay Nhất",
+      "description": "CUKAK, Lê Bảo Bình, Dunghoangpham, Phát Huy T4",
+      "type": 2,
+      "link": "/album/Top-100-Nhac-Dance-Viet-Nam-Hay-Nhat-CUKAK-Le-Bao-Binh-Dunghoangpham-Phat-Huy-T4/OPxgCOK8wYNc.html"
+    },
+    {
+      "id": "wa4f8nnzZ0hl",
+      "thumbnail": "https://photo-resize-zmp3.zmdcdn.me/w600_r1x1_jpeg/cover/c/6/0/6/c606a4f0439f686ce22b02f85414c882.jpg",
+      "tag": "CÓ THỂ BẠN THÍCH",
+      "layoutType": 1,
+      "isQuickPlay": true,
+      "title": "Bolero Hay Nhất",
+      "description": "Cẩm Ly, Quang Lê, Như Quỳnh, Lệ Quyên",
+      "type": 2,
+      "link": "/album/Bolero-Hay-Nhat-Cam-Ly-Quang-Le-Nhu-Quynh-Le-Quyen/wa4f8nnzZ0hl.html"
+    },
+    {
+      "id": "z7SKULVoFeew",
+      "thumbnail": "https://photo-resize-zmp3.zmdcdn.me/w600_r1x1_jpeg/cover/4/c/d/d/4cdd659f7ab6d1445c15c0bc47fe9622.jpg",
+      "tag": "CÓ THỂ BẠN THÍCH",
+      "layoutType": 1,
+      "isQuickPlay": true,
+      "title": "Nhạc Trẻ Remix",
+      "description": "Châu Khải Phong, Du Uyên, Phan Duy Anh, Đạt Long Vinh",
+      "type": 2,
+      "link": "/album/Nhac-Tre-Remix-Chau-Khai-Phong-Du-Uyen-Phan-Duy-Anh-Dat-Long-Vinh/z7SKULVoFeew.html"
+    }
+  ]
+}

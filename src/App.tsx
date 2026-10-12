@@ -1,92 +1,18 @@
-import { PrismaClient } from "@prisma/client";
-import { useState } from "react";
+import { MainLayOut } from "./layout/MainLayout";
 
-const prisma = new PrismaClient();
-function App() {
-  const [formData, setFormData] = useState({
-    username: "",
-    password: "",
-  });
-
-  const handleChange = (e: any) => {
-    const { name, value } = e.target;
-    setFormData((prev: any) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-  async function saveUserToDatabase(data: {
-    username: string;
-    password: string;
-  }) {
-    try {
-      const newUser = await prisma.user.create({
-        data: {
-          name: data.username,
-          password: data.password,
-        },
-      });
-
-      console.log("Đã gửi và lưu thành công lên MongoDB:", newUser);
-      return { success: true, data: newUser };
-    } catch (error) {
-      console.error("Lỗi khi gửi dữ liệu lên database:", error);
-      return { success: false, error };
-    } finally {
-      await prisma.$disconnect();
-    }
-  }
-  const handleSubmit = async (e: any) => {
-    e.preventDefault();
-    await saveUserToDatabase(formData);
+export function App() {
+  const obj = {
+    link: "https://a128-z3.zmdcdn.me/67af38576c9b7a05d201598bbdc90fbc?authen=exp=1791042922~acl=/67af38576c9b7a05d201598bbdc90fbc*~hmac=fb72c53fd132b52002684154246434ed",
+    thumbnail:
+      "https://photo-resize-zmp3.zmdcdn.me/w94_r1x1_jpeg/cover/c/d/a/0/cda072526e88b03c5fb8066b5cfb0dee.jpg",
+    title: "Gói Con Tim Làm Quà (From 'Bò Sữa Bay')",
+    artistsNames: "Nguyễn Hùng, Mounter",
   };
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
-      <div>
-        <label
-          htmlFor="username"
-          className="block mb-1 text-sm font-medium text-slate-600"
-        >
-          Tài khoản (Username)
-        </label>
-        <input
-          type="text"
-          id="username"
-          name="username"
-          required
-          placeholder="Nhập tên tài khoản..."
-          value={formData.username}
-          onChange={handleChange}
-          className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-        />
-      </div>
-
-      <div>
-        <label
-          htmlFor="password"
-          className="block mb-1 text-sm font-medium text-slate-600"
-        >
-          Mật khẩu (Password)
-        </label>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          required
-          placeholder="Nhập mật khẩu..."
-          value={formData.password}
-          onChange={handleChange}
-          className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-        />
-      </div>
-
-      <button
-        type="submit"
-        className="w-full py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition duration-200 cursor-pointer"
-      >
-        Đăng Nhập
-      </button>
-    </form>
+    // <BrowserRouter>
+    // </BrowserRouter>
+    <MainLayOut></MainLayOut>
+    // <SongPlayer {...obj} />
   );
 }
 

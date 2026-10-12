@@ -1,1 +1,10 @@
 @import "tailwindcss";
+@theme {
+  --color-player-theme: #170f23;
+}
+body {
+  background-color: #170f23;
+  width: 100vw;
+  height: 100 vh;
+  font-family: "Inter", sans-serif;
+}
