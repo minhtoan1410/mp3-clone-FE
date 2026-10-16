@@ -10,8 +10,8 @@ export function getRandomNumber(min: number, max: number) {
 }
 
 export function getRandomKElements<T>(arr: T[], k: number): T[] {
-  if (k >= arr.length) {
-    throw new Error('k nho hon len(arr)')
+  if (k > arr.length) {
+    throw new Error('k lon hon len(arr)')
   }
   if (k < 0) {
     throw new Error('k la so am')
@@ -22,4 +22,8 @@ export function getRandomKElements<T>(arr: T[], k: number): T[] {
     ;[copy[i], copy[randIdx]] = [copy[randIdx], copy[i]]
   }
   return copy.slice(0, k)
+}
+
+export function sleep(ms: number) {
+  return new Promise((resolve) => setTimeout(resolve, ms))
 }

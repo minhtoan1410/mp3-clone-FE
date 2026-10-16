@@ -8,13 +8,14 @@ import SideBar from './SideBar'
 import TopBar from './TopBar'
 import Home from '@/components/ui/Home'
 import Library from '@/components/ui/Library'
+import SongPlayer from '@/components/player/SongPlayer'
 export default function MainLayOut() {
   return (
     <div className='flex h-screen w-full overflow-hidden text-gray-200 border border-green-500 '>
-      {/* <SongPlayer /> */}
+      <SongPlayer />
       <SideBar />
-      <div className='flex px-14 py-4 flex-1 min-w-0 flex-col overflow-x-auto border border-red-500'>
-        {/* <TopBar />
+      <div className='flex flex-1 px-14 py-4 min-w-0 flex-col overflow-x-auto  border border-red-500 custom-scrollbar'>
+        <TopBar />
         <Routes>
           <Route path='/' element={<Home />}></Route>
           <Route path='/zingchart' element={<ZingChart />}></Route>
@@ -22,7 +23,7 @@ export default function MainLayOut() {
           <Route path='/live' element={<Live />}></Route>
           <Route path='/ranking' element={<Ranking />}></Route>
           <Route path='/hub' element={<Hub />}></Route>
-        </Routes> */}
+        </Routes>
       </div>
     </div>
   )

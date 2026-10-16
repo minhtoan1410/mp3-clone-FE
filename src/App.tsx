@@ -1,6 +1,9 @@
 import MainLayOut from './layout/MainLayout'
 import Song from './components/common/Song'
 import SongPlayer from './components/player/SongPlayer'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+
+const queryClient = new QueryClient()
 
 export default function App() {
   const obj = {
@@ -10,9 +13,11 @@ export default function App() {
     artistsNames: 'Nguyễn Hùng, Mounter'
   }
   return (
+    <QueryClientProvider client={queryClient}>
+      <MainLayOut />
+    </QueryClientProvider>
     // <BrowserRouter>
     // </BrowserRouter>
     // <Song {...obj} />
-    <MainLayOut></MainLayOut>
   )
 }

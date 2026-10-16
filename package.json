@@ -1,5 +1,5 @@
 {
-  "name": "spotify-clone",
+  "name": "mp3-clone",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,18 +10,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@prisma/client": "^7.9.0",
     "@tailwindcss/vite": "^4.3.3",
+    "@tanstack/react-query": "^5.104.2",
     "clsx": "^2.1.1",
     "dotenv": "^17.4.2",
-    "mongo": "^0.1.0",
     "pnpm": "^11.17.0",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
     "react-router-dom": "^7.18.3",
     "tailwind-merge": "^3.7.0",
     "tailwindcss": "^4.3.3",
-    "zingmp3-api-next": "^1.0.4"
+    "zustand": "^5.0.15"
   },
   "devDependencies": {
     "@types/node": "^24.13.2",
@@ -30,7 +29,6 @@
     "@vitejs/plugin-react": "^6.0.3",
     "oxlint": "^1.71.0",
     "prettier": "^3.9.9",
-    "prisma": "^7.9.0",
     "typescript": "~6.0.2",
     "vite": "^8.1.1"
   }
