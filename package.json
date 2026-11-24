@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "test": "bun src/test.ts",
     "build": "tsc -b && vite build",
     "lint": "oxlint",
     "preview": "vite preview"
@@ -20,6 +21,7 @@
     "react-router-dom": "^7.18.3",
     "tailwind-merge": "^3.7.0",
     "tailwindcss": "^4.3.3",
+    "zingmp3-api-next": "^1.0.4",
     "zustand": "^5.0.15"
   },
   "devDependencies": {

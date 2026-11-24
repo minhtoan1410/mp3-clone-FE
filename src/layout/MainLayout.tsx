@@ -8,11 +8,11 @@ import SideBar from './SideBar'
 import TopBar from './TopBar'
 import Home from '@/components/ui/Home'
 import Library from '@/components/ui/Library'
-import SongPlayer from '@/components/player/SongPlayer'
+// import SongPlayer from '@/components/player/SongPlayer'
 export default function MainLayOut() {
   return (
     <div className='flex h-screen w-full overflow-hidden text-gray-200 border border-green-500 '>
-      <SongPlayer />
+      {/* <SongPlayer /> */}
       <SideBar />
       <div className='flex flex-1 px-14 py-4 min-w-0 flex-col overflow-x-auto  border border-red-500 custom-scrollbar'>
         <TopBar />

@@ -1,4 +1,4 @@
-export interface SongData {
+export interface Song {
   id: string
   thumbnail: string
   title: string

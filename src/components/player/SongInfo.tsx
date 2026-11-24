@@ -1,6 +1,6 @@
-import type { SongData } from '@/types'
+import type { Song } from '@/types/types'
 
-export default function SongInfo({ thumbnail, title, artistsNames }: Partial<SongData>) {
+export default function SongInfo({ thumbnail, title, artistsNames }: Partial<Song>) {
   return (
     <div className='flex w-[30%] min-w-0'>
       {/* thumbnail */}

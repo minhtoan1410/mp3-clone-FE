@@ -11,3 +11,5 @@ export const BREAKPOINTS = {
 export const SONG = {
   GAP: 32
 }
+
+export const BASE_API_URL = 'http://localhost:3001'

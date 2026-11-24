@@ -1,4 +1,4 @@
-import type { SongData } from '@/types'
+import type { Song } from '@/types/types'
 import IconWithTooltip from './IconWithTooltip'
 import { cn } from '@/utils'
 import { usePlayerStore } from '@/stores/Player'
@@ -10,7 +10,7 @@ export default function Song({
   artistsNames,
   className,
   ...props
-}: SongData & React.ComponentProps<'div'>) {
+}: Song & React.ComponentProps<'div'>) {
   const { setCurrentSong } = usePlayerStore()
   return (
     <div

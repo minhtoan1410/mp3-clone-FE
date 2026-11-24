@@ -1,5 +1,5 @@
 import { BANNER } from '@/constants'
-import type { QuickPlayItem } from '@/types'
+import type { QuickPlayItem } from '@/types/types'
 
 export default function QuickPlay({
   id,
