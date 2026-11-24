@@ -1,11 +1,11 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
-import type { Song } from '@/types/types'
+import type { SongProps } from '@/types/types'
 
 interface PlayerStore {
-  currentSong: Song | null
+  currentSong: SongProps | null
   isPlaying: boolean
-  setCurrentSong: (song: Song) => void
+  setCurrentSong: (song: SongProps) => void
   togglePlay: () => void
 }
 

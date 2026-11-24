@@ -3,12 +3,12 @@ import Song from './Song'
 import SongSkeleton from '@/components/common/SongSkeleton'
 import useApiQuery from '@/hooks/useApiQuery'
 import { useState } from 'react'
-interface SongsGridProps {
+interface SongsGridProps extends React.ComponentProps<'div'> {
   gap: number
   minItems: number
   maxItems: number
 }
-export default function SongsGrid({ gap, minItems, maxItems }: SongsGridProps) {
+export default function SongsGrid({ gap, minItems, maxItems, className, ...props }: SongsGridProps) {
   const [offset, setOffset] = useState<number>(0)
   const { isFetching, data, refetch } = useApiQuery({
     endpoint: '/v1/api/songs',
@@ -21,13 +21,16 @@ export default function SongsGrid({ gap, minItems, maxItems }: SongsGridProps) {
     refetch()
   }
   return (
-    <div className='my-2'>
-      <div
-        className='bg-[#8B45CA] rounded-full flex items-center py-1 pl-1 pr-3 w-fit ml-auto cursor-pointer hover:opacity-85'
-        onClick={() => handleRefresh()}
-      >
-        <div className='icon text-[20px] mx-1'>{'\u005C'}</div>
-        <div className='whitespace-nowrap text-[14px]'>LÀM MỚI</div>
+    <div className={className} {...props}>
+      <div className='my-4 flex'>
+        <div className='mr-auto font-bold text-2xl'>Gợi ý bài hát</div>
+        <div
+          className='bg-[#8B45CA] select-none rounded-full flex items-center py-1 pl-1 pr-3 w-fit ml-auto cursor-pointer hover:opacity-85'
+          onClick={() => handleRefresh()}
+        >
+          <div className='icon text-[20px] mx-1'>{'\u005C'}</div>
+          <div className='whitespace-nowrap text-[14px]'>LÀM MỚI</div>
+        </div>
       </div>
 
       <div

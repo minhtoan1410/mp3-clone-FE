@@ -1,17 +1,13 @@
-export interface Song {
+export interface SongProps {
   id: string
   thumbnail: string
   title: string
   artistsNames: string
 }
-export interface QuickPlayItem {
+export interface SectionBannerProps {
   id: string
   thumbnail: string
   tag: string
-  layoutType: number
-  isQuickPlay: boolean
   title: string
   description: string
-  type: number
-  link: string
 }

@@ -2,10 +2,11 @@ import { useAnimationFrame } from '@/hooks/useAnimationFrame' // ✅ Đã sửa 
 import { useRef, useState, type RefObject, type ChangeEvent, type CSSProperties, useEffect } from 'react'
 
 type PlayerControlsProps = {
+  isFetching: boolean
   audioRef: RefObject<HTMLAudioElement | null>
 }
 
-export default function PlayerControls({ audioRef }: PlayerControlsProps) {
+export default function PlayerControls({ audioRef, isFetching }: PlayerControlsProps) {
   const timeBarRef = useRef<HTMLInputElement | null>(null)
 
   const [isPlaying, setIsPlaying] = useState(false)
@@ -44,17 +45,22 @@ export default function PlayerControls({ audioRef }: PlayerControlsProps) {
 
   function handleIsPlaying() {
     if (!audioRef.current) return
-
-    try {
-      if (isPlaying) {
-        audioRef.current.pause()
-      } else {
-        void audioRef.current.play()
-      }
-      setIsPlaying((prev) => !prev)
-    } catch (error) {
-      console.log(error)
+    if (isPlaying) {
+      audioRef.current.pause()
+    } else {
+      void audioRef.current.play()
     }
+    setIsPlaying((prev) => !prev)
+    // try {
+    //   if (isPlaying) {
+    //     audioRef.current.pause()
+    //   } else {
+    //     void audioRef.current.play()
+    //   }
+    //   setIsPlaying((prev) => !prev)
+    // } catch (error) {
+    //   console.log(error)
+    // }
   }
 
   function handleTimeBarChange(e: ChangeEvent<HTMLInputElement>) {
@@ -71,13 +77,17 @@ export default function PlayerControls({ audioRef }: PlayerControlsProps) {
   }
 
   return (
-    <div className='flex flex-col w-[40%]'>
+    <div className='flex flex-col w-[40%] select-none'>
       <div className='flex justify-center'>
         <div className='w-12 h-12 rounded-full transition hover:bg-[#ffffff1A] mx-4 my-auto justify-center items-center flex'>
           <i className='icon text-[22px]'>{'\uE90E'}</i>
         </div>
 
-        {isPlaying ? (
+        {isFetching ? (
+          <i className='icon text-[40px] hover:text-[#B66CE0] transition animate-spin [animation-duration:5s] my-auto cursor-pointer'>
+            {'\uE996'}
+          </i>
+        ) : isPlaying ? (
           <i
             className='icon text-[40px] hover:text-[#B66CE0] transition my-auto cursor-pointer'
             onClick={handleIsPlaying}

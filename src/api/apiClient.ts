@@ -32,8 +32,8 @@ export default async function apiClient<E extends Endpoint, M extends Method<E>>
         ? JSON.stringify(opts.body)
         : undefined
   })
-  if (!res.ok) {
-    throw new Error(`HTTP Error! Status: ${res.status}`)
-  }
+  // if (!res.ok) {
+  //   throw new Error(`HTTP Error! Status: ${res.status}`)
+  // }
   return (await res.json()) as Response<E, M>
 }

@@ -1,5 +1,5 @@
 import NavButton from '@/components/common/NavButton'
-import zing from '../assets/ZingMP3logo.svg'
+import zing from '@/assets/ZingMP3logo.svg'
 import { NavLink } from 'react-router-dom'
 function SidebarLogo() {
   return (

@@ -1,13 +1,14 @@
+import SectionBanner from '@/components/common/SectionBanner'
 import SongsGrid from '@/components/common/SongsGrid'
-import { SONG } from '@/constants'
+import SongPlayer from '@/components/player/SongPlayer'
+import { SONG_GRID } from '@/constants'
 
 export default function Home() {
-  // const items: QuickPlayItem[] = data.quickPlayItems.slice(startIndex, startIndex + 6)
-  // const { XL } = BREAKPOINTS
-  return <SongsGrid gap={SONG.GAP} minItems={2} maxItems={3} />
-  // <Carousel maxBreakpoint={XL} minVisibleItems={2} maxVisibleItems={3} gap={32}>
-  //   {items.map((e) => (
-  // <QuickPlay key={e.id} {...e} />
-  //   ))}
-  // </Carousel>
+  return (
+    <div>
+      <SectionBanner className='my-4' />
+      <SongsGrid className='my-12' gap={SONG_GRID.GAP} minItems={2} maxItems={3} />
+      <SongPlayer />
+    </div>
+  )
 }

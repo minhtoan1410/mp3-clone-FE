@@ -26,7 +26,7 @@ export default function VolumeControl({ audioRef }: VolumeControlProps) {
     handleVolumeChange(newVolume)
   }
   return (
-    <div className='flex w-[30%] flex-row-reverse pr-12'>
+    <div className='flex w-[30%] flex-row-reverse pr-12 select-none'>
       <div className='flex'>
         <div className='w-12 h-12 rounded-full transition hover:bg-[#ffffff1A] mx-2 my-auto justify-center items-center flex'>
           {isMuted ? (

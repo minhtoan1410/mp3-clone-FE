@@ -1,4 +1,4 @@
-import type { Song } from '@/types/types'
+import type { SongProps } from '@/types/types'
 import IconWithTooltip from './IconWithTooltip'
 import { cn } from '@/utils'
 import { usePlayerStore } from '@/stores/Player'
@@ -10,12 +10,12 @@ export default function Song({
   artistsNames,
   className,
   ...props
-}: Song & React.ComponentProps<'div'>) {
+}: SongProps & React.ComponentProps<'div'>) {
   const { setCurrentSong } = usePlayerStore()
   return (
     <div
       className={cn(
-        'cursor-pointer shrink-0 w-full min-w-0 flex rounded-md gap-4 items-center h-20 p-2 group text-white hover:bg-[#ffffff1a]',
+        'cursor-pointer shrink-0 w-full min-w-0 flex rounded-md gap-4 items-center h-20 p-2 group text-white hover:bg-[#ffffff1a] select-none',
         className
       )}
       {...props}
@@ -32,7 +32,9 @@ export default function Song({
 
       <div>
         <h2 className=' text-[15px] line-clamp-1 hover:text-[#cd7cfc]'>{title}</h2>
-        <div className='text-[#ffffff80] text-[13px] hover:text-[#B66CE0] hover:underline'>{artistsNames}</div>
+        <div className='text-[#ffffff80] line-clamp-1 text-[13px] hover:text-[#B66CE0] hover:underline'>
+          {artistsNames}
+        </div>
       </div>
 
       <div className='hidden flex-row ml-auto group-hover:flex'>

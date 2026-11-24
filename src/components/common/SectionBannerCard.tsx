@@ -1,17 +1,7 @@
 import { BANNER } from '@/constants'
-import type { QuickPlayItem } from '@/types/types'
+import type { SectionBannerProps } from '@/types/types'
 
-export default function QuickPlay({
-  id,
-  thumbnail,
-  tag,
-  layoutType,
-  isQuickPlay,
-  title,
-  description,
-  type,
-  link
-}: QuickPlayItem) {
+export default function SectionBannerCard({ id, thumbnail, tag, title, description }: SectionBannerProps) {
   // sm:w-(--banner-width-sm) xl:w-(--banner-width-xl)
   return (
     <div

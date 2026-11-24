@@ -23,6 +23,17 @@ export type Api = {
       query: { offset?: number; limit?: number }
     }
   }
+  '/v1/api/section-banners': {
+    GET: {
+      response: {
+        message: string
+        status: string
+        data: { id: string; thumbnail: string; tag: string; title: string; description: string }[]
+        timestamp: string
+      }
+      query: { offset?: number; limit?: number }
+    }
+  }
 }
 export type Endpoint = keyof Api
 export type Method<E extends Endpoint> = keyof Api[E]
